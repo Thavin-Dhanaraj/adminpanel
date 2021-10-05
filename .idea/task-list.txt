@@ -1,0 +1,5 @@
+*Change name food to item in all pages
+*Quick Order Configuration
+*Custom Order
+*Logo
+*Order Status Name
