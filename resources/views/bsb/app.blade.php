@@ -292,7 +292,7 @@ font-family: 'Poppins', sans-serif !important;
                         <li class="active">
                     @endif
                             <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">cake</i>
+                                <i class="material-icons">inventory</i>
                                 <span>{{$lang->get(1)}}</span>
                             </a>
                             <ul class="ml-menu">
@@ -711,8 +711,19 @@ font-family: 'Poppins', sans-serif !important;
                                         </li>
                                         @endif
                                         </li>
+                                        
+                                    <li>
+                                    @if (\Request::is('timeslots'))
+                                        <li class="active">
+                                            @endif
+                                            <a href="timeslots">{{$lang->get(637)}}</a>
+                                            @if (\Request::is('timeslots'))
+                                        </li>
+                                        @endif
+                                        </li>
 
                                     <li>
+                                        
                                     @if (\Request::is('payments'))
                                     <li class="active">
                                     @endif

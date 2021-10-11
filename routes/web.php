@@ -207,3 +207,11 @@ Route::post('bannersAdd','BannersController@add');
 Route::post('bannersGoPage','BannersController@GoPage');
 Route::post('bannerGetInfo','BannersController@GetInfo');
 Route::post('bannersDelete','BannersController@delete');
+
+
+// timeslots
+Route::get('timeslots','TimeslotsController@load');
+Route::post('timeslotsAdd','TimeslotsController@add');
+Route::post('timeslotsGoPage','TimeslotsController@GoPage');
+Route::post('timeslotsGetInfo','TimeslotsController@GetInfo');
+Route::post('timeslotsDelete','TimeslotsController@delete');

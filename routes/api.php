@@ -151,3 +151,8 @@ Route::post('variantsDelete','FoodController@productVariantsDelete');
 
 //
 Route::post('driversOnMapList', 'Api\owner\OwnerController@driversOnMapList')->middleware('auth:api');
+
+
+// timeslots
+Route::post('timeslotsAdd','TimeslotsController@timeslotsAdd');
+Route::post('timeslotsDelete','TimeslotsController@timeslotsDelete');

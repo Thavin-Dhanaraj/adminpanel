@@ -1,0 +1,42 @@
+1633530722787	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Thavin\\AppData\\Local\\Temp\\rust_mozprofile.Rt2Ir57KijRY"
+1633530724685	Marionette	INFO	Marionette enabled
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Thavin\\AppData\\Local\\Temp\\rust_mozprofile.Rt2Ir57KijRY\\search.json.mozlz4", (void 0)))
+1633530728301	Marionette	INFO	Listening on port 60726
+1633530728410	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://static.sketchfab.com/static/builds/web/dist/26b8e536d7c93f2a2fa22da99698cf18-v2.js, line 2: WebGL context was lost.
+JavaScript warning: , line 0: WebGL warning: generateMipmap: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: , line 0: WebGL warning: drawArraysInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: , line 0: WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: , line 0: WebGL warning: drawArraysInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript error: resource://devtools/server/actors/network-monitor/network-event-actor.js, line 109: Error: Got a request https://www.gstatic.com/recaptcha/releases/qljbK_DTcvY1PzbR7IG69z1r/styles__ltr.css without a browsingContextID set
+JavaScript error: resource://devtools/server/actors/network-monitor/network-event-actor.js, line 109: Error: Got a request https://static.sketchfab.com/static/builds/web/dist/a75338dffb4e6bfd212d45f484205f7a-v2.css without a browsingContextID set
+JavaScript error: resource://devtools/server/actors/network-monitor/network-event-actor.js, line 109: Error: Got a request https://static.sketchfab.com/static/builds/web/dist/983a406e34e36f35116cabf5f7f547f6-v2.css without a browsingContextID set
+JavaScript error: resource://devtools/server/actors/network-monitor/network-event-actor.js, line 109: Error: Got a request https://static.sketchfab.com/static/builds/web/dist/c8b95839d8448369b659c084909f6701-v2.css without a browsingContextID set
+JavaScript error: resource://devtools/server/actors/network-monitor/network-event-actor.js, line 109: Error: Got a request https://static.sketchfab.com/static/builds/web/dist/df14060d00c3dd564647c1f023c0e347-v2.css without a browsingContextID set
+console.warn: "Resource  of root-node was not found."
+console.warn: "Already stopped listening to websocket events for this window."
+console.warn: "Already stopped listening to server sent events for this window."
+console.warn: "Already stopped listening to websocket events for this window."
+console.warn: "Already stopped listening to server sent events for this window."
+console.warn: "Already stopped listening to websocket events for this window."
+console.warn: "Already stopped listening to server sent events for this window."
+console.warn: "Already stopped listening to websocket events for this window."
+console.warn: "Already stopped listening to server sent events for this window."
+console.warn: "Already stopped listening to websocket events for this window."
+console.warn: "Already stopped listening to server sent events for this window."
+JavaScript warning: https://static.sketchfab.com/static/builds/web/dist/26b8e536d7c93f2a2fa22da99698cf18-v2.js, line 2: WebGL context was lost.
+console.warn: "Already stopped listening to websocket events for this window."
+console.warn: "Already stopped listening to server sent events for this window."
+console.warn: "Already stopped listening to websocket events for this window."
+console.warn: "Already stopped listening to server sent events for this window."
+JavaScript warning: , line 0: WebGL warning: generateMipmap: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: , line 0: WebGL warning: drawArraysInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: , line 0: WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+JavaScript warning: , line 0: WebGL warning: drawArraysInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+console.error: "Tried to send a 'target-destroyed-form' event on an already destroyed actor 'watcher'"
+1633531224536	Marionette	INFO	Stopped listening on port 60726
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
