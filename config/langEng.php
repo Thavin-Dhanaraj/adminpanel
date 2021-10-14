@@ -586,4 +586,9 @@ return [
     '639' => 'From',
     '640' => 'To',
     '641' => 'Timeslots List',
+    '642' => "Enable UPI Payments",
+    '643' => "UPI Payments",
+    '644' => "UPI Id",
+    '645' => "Insert UPI Id",
+    '646' => "The UPI Id field is required",
 ];

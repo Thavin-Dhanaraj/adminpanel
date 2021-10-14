@@ -12,6 +12,40 @@
     </div>
     <div class="body">
 
+    
+    <div class="row clearfix">
+
+        <div class="col-md-12 foodm">
+            <label style="margin-bottom: 30px"><h4>{{$lang->get(643)}}</h4></label>
+        </div>
+
+
+        <div class="col-md-6 foodm">
+
+            <div class="col-md-12 foodm">
+                <div class="form-group form-group-lg " >
+                    <div id="upiEnable" onclick="onCheckClick('upiEnable')" style="font-weight: bold; "></div><br>
+                </div>
+            </div>
+
+            <div class="col-md-12 foodm">
+                <div class="col-md-2 foodm">
+                    <h5>{{$lang->get(644)}}</h5>
+                </div>
+                <div class="col-md-10 foodm">
+                    <div class="form-group form-group-lg form-float">
+                        <div class="form-line">
+                            <input type="text" name="upiId" id="upiId" class="form-control" placeholder="" maxlength="1000" value="{{$upiId}}">
+                            <label class="form-label">{{$lang->get(645)}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
         <div class="row clearfix">
 
             <div class="col-md-12 foodm">
@@ -481,6 +515,14 @@
     </div>
 
     <script type="text/javascript">
+    
+    if ('{{$upiEnable}}' == "true") {
+        var upiEnable = true;
+        document.getElementById('upiEnable').innerHTML = "<img src=\"img/check_on.png\" width=\"25px\">&nbsp {{$lang->get(642)}}";
+    }else{
+        var upiEnable = false;
+        document.getElementById('upiEnable').innerHTML = "<img src=\"img/check_off.png\" width=\"25px\">&nbsp {{$lang->get(642)}}";
+    }
 
     if ('{{$StripeEnable}}' == "true") {
         var StripeEnable = true;
@@ -576,6 +618,11 @@
 
     function onCheckClick(id){
         var value = "on";
+        if (id == 'upiEnable') {
+            if (upiEnable == true) value = "off"; else value = "on";
+            upiEnable = !upiEnable;
+            document.getElementById(id).innerHTML = "<img src=\"img/check_"+value+".png\" width=\"25px\">&nbsp {{$lang->get(642)}}";
+        }
         if (id == 'StripeEnable') {
             if (StripeEnable == true) value = "off"; else value = "on";
             StripeEnable = !StripeEnable;
@@ -644,6 +691,11 @@
     }
 
     function save(){
+        var upiId = document.getElementById("upiId").value;
+        if (upiEnable){
+            if (upiId.length == 0)
+                return showNotification("bg-red", "{{$lang->get(646)}}", "bottom", "center", "", "");
+        }
         var stripeKey = document.getElementById("stripeKey").value;
         var stripeSecretKey = document.getElementById("stripeSecretKey").value;
         if (StripeEnable){
@@ -727,6 +779,8 @@
             type: 'POST',
             url: '{{ url("paymentsSave") }}',
             data: {
+                upiEnable: upiEnable,
+                upiId: upiId,
                 StripeEnable: StripeEnable,
                 stripeKey: stripeKey,
                 stripeSecretKey: stripeSecretKey,

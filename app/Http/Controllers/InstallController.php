@@ -126,6 +126,11 @@ class InstallController extends Controller
             });
         }
 
+        if (count(DB::table('settings')->where("param", 'upiEnable')->get()) == 0)
+            DB::table('settings')->insert(['param' => 'upiEnable', 'value' => 'true', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
+        if (count(DB::table('settings')->where("param", 'upiId')->get()) == 0)
+            DB::table('settings')->insert(['param' => 'upiId', 'value' => '', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
+        
         if (count(DB::table('settings')->where("param", 'StripeEnable')->get()) == 0)
             DB::table('settings')->insert(['param' => 'StripeEnable', 'value' => 'true', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
         if (count(DB::table('settings')->where("param", 'stripeKey')->get()) == 0)
@@ -934,6 +939,11 @@ class InstallController extends Controller
         //
         // payments
         //
+        if (count(DB::table('settings')->where("param", 'upiEnable')->get()) == 0)
+            DB::table('settings')->insert(['param' => 'upiEnable', 'value' => 'true', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
+        if (count(DB::table('settings')->where("param", 'upiId')->get()) == 0)
+            DB::table('settings')->insert(['param' => 'upiId', 'value' => '', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
+        
         if (count(DB::table('settings')->where("param", 'StripeEnable')->get()) == 0)
             DB::table('settings')->insert(['param' => 'StripeEnable', 'value' => 'true', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
         if (count(DB::table('settings')->where("param", 'stripeKey')->get()) == 0)

@@ -81,6 +81,8 @@ class SettingsController extends Controller
     }
 
     function paymentsView($green, $text){
+        $upiEnable = DB::table('settings')->where('param', '=', "upiEnable")->get()->first()->value;
+        $upiId = DB::table('settings')->where('param', '=', "upiId")->get()->first()->value;
         $StripeEnable = DB::table('settings')->where('param', '=', "StripeEnable")->get()->first()->value;
         $stripeKey = DB::table('settings')->where('param', '=', "stripeKey")->get()->first()->value;
         $stripeSecretKey = DB::table('settings')->where('param', '=', "stripeSecretKey")->get()->first()->value;
@@ -107,7 +109,7 @@ class SettingsController extends Controller
         $instamojoPrivateToken = DB::table('settings')->where('param', '=', "instamojoPrivateToken")->get()->first()->value;
         $instamojoSandBoxMode = DB::table('settings')->where('param', '=', "instamojoSandBoxMode")->get()->first()->value;
 
-        return view('payments', ['StripeEnable' => $StripeEnable, 'stripeKey' => $stripeKey, 'stripeSecretKey' => $stripeSecretKey,
+        return view('payments', ['upiEnable' => $upiEnable, 'upiId' => $upiId, 'StripeEnable' => $StripeEnable, 'stripeKey' => $stripeKey, 'stripeSecretKey' => $stripeSecretKey,
             'razEnable' => $razEnable, 'razKey' => $razKey, 'razName' => $razName, 'cashEnable' => $cashEnable,
             'payPalEnable' => $payPalEnable, 'payPalSandBox' => $payPalSandBox, 'payPalClientId' => $payPalClientId, 'payPalSecret' => $payPalSecret,
             'walletEnable' => $walletEnable,
@@ -133,6 +135,8 @@ class SettingsController extends Controller
     }
 
     public function paymentsSave(Request $request){
+        $upiEnable = $request->input('upiEnable') ?: "";
+        $upiId = $request->input('upiId') ?: "";
         $StripeEnable = $request->input('StripeEnable') ?: "";
         $stripeKey = $request->input('stripeKey') ?: "";
         $stripeSecretKey = $request->input('stripeSecretKey') ?: "";
@@ -141,6 +145,8 @@ class SettingsController extends Controller
         $razName = $request->input('razName') ?: "";
         $cashEnable = $request->input('cashEnable') ?: "";
         $walletEnable = $request->input('walletEnable') ?: "";
+        DB::table('settings')->where('param', 'upiEnable')->update(array('value' => $upiEnable, 'updated_at' => new \DateTime()));
+        DB::table('settings')->where('param', 'upiId')->update(array('value' => $upiId , 'updated_at' => new \DateTime()));
         DB::table('settings')->where('param', 'StripeEnable')->update(array('value' => $StripeEnable, 'updated_at' => new \DateTime()));
         DB::table('settings')->where('param', 'stripeKey')->update(array('value' => $stripeKey, 'updated_at' => new \DateTime()));
         DB::table('settings')->where('param', 'stripeSecretKey')->update(array('value' => $stripeSecretKey, 'updated_at' => new \DateTime()));

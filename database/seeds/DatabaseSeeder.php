@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
         //
         // payments
         //
+        DB::table('settings')->insert(['param' => 'upiEnable', 'value' => 'true', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
+        DB::table('settings')->insert(['param' => 'upiId', 'value' => '', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
         DB::table('settings')->insert(['param' => 'StripeEnable', 'value' => 'true', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
         DB::table('settings')->insert(['param' => 'stripeKey', 'value' => '', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);
         DB::table('settings')->insert(['param' => 'stripeSecretKey', 'value' => '', 'created_at' => new \DateTime(), 'updated_at' => new \DateTime(),]);

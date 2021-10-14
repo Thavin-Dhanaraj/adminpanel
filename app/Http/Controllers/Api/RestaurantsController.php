@@ -81,6 +81,8 @@ class RestaurantsController extends Controller
         //
         // payments
         //
+        $upiEnable = DB::table('settings')->where('param', '=', "upiEnable")->get()->first()->value;
+        $upiId = DB::table('settings')->where('param', '=', "upiId")->get()->first()->value;
         $StripeEnable = DB::table('settings')->where('param', '=', "StripeEnable")->get()->first()->value;
         $stripeKey = DB::table('settings')->where('param', '=', "stripeKey")->get()->first()->value;
         $stripeSecretKey = DB::table('settings')->where('param', '=', "stripeSecretKey")->get()->first()->value;
@@ -230,6 +232,8 @@ class RestaurantsController extends Controller
             'restaurantsreviews' => $restaurantsreviews,
             'coupons' => $coupons,
             'payments' => [
+                'upiEnable' => $upiEnable,
+                'upiId' => $upiId,
                 'StripeEnable' => $StripeEnable,
                 'stripeKey' => $stripeKey,
                 'stripeSecretKey' => $stripeSecretKey,

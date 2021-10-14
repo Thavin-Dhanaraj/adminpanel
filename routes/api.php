@@ -156,3 +156,9 @@ Route::post('driversOnMapList', 'Api\owner\OwnerController@driversOnMapList')->m
 // timeslots
 Route::post('timeslotsAdd','TimeslotsController@timeslotsAdd');
 Route::post('timeslotsDelete','TimeslotsController@timeslotsDelete');
+
+
+// category
+Route::post('/quickOrderList', 'Api\owner\QuickOrderController@load')->middleware('auth:api');
+Route::post('/quickOrderSave', 'Api\owner\QuickOrderController@quickOrderSave')->middleware('auth:api');
+Route::post('/quickOrderDelete', 'Api\owner\QuickOrderController@quickOrderDelete')->middleware('auth:api');

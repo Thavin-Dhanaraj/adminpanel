@@ -23,6 +23,7 @@ class CreateFoodsTable extends Migration
             $table->longText('desc');
             $table->integer('restaurant');
             $table->integer('category');
+            $table->integer('quickOrder');
             $table->longText('ingredients');
             $table->string('unit');
             $table->integer('packageCount');
